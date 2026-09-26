@@ -1,6 +1,6 @@
 layout: {zmk_keyboard: mona2}
 layers:
-  WIN:
+  default:
   - Q
   - W
   - E
@@ -11,171 +11,171 @@ layers:
   - I
   - O
   - P
-  - A
-  - S
-  - D
-  - F
+  - {t: A, h: LEFT ALT}
+  - {t: S, h: LEFT CONTROL}
+  - {t: D, h: LEFT SHIFT}
+  - {t: F, h: LEFT GUI}
   - G
-  - '-'
+  - F10
   - H
-  - J
-  - K
-  - L
-  - {t: ;, h: MOUSE_W}
-  - {t: Z, h: LEFT SHIFT}
+  - {t: J, h: RIGHT GUI}
+  - {t: K, h: RIGHT SHIFT}
+  - {t: L, h: RIGHT CONTROL}
+  - {t: '-', h: scrl}
+  - Z
   - X
   - C
   - V
   - B
-  - ':'
+  - ''''
   - ;
   - N
   - M
   - ','
   - .
-  - {t: /, h: BLE_W}
-  - RCTRL
-  - LEFT WIN
-  - LEFT ALT
-  - {t: '`', h: NUM_W}
-  - {t: SPACE, h: MOUSE_W}
-  - {t: '-', h: SCRL_W}
+  - {t: /, h: BLE}
+  - '&mg_set_0'
+  - '&mg_set_1'
+  - '&mg_set_2'
+  - {t: ESCAPE, h: mouse}
+  - {t: SPACE, h: num-sysmbol}
+  - {t: TAB, h: scrl}
   - ENTER
   - BACKSPACE
   - RIGHT SHIFT
-  MAC:
-  - Q
-  - W
-  - E
-  - R
-  - T
-  - Y
-  - U
-  - I
-  - O
-  - P
-  - A
-  - S
-  - D
-  - F
-  - G
-  - '-'
-  - H
-  - J
-  - K
-  - L
-  - {t: ;, h: MOUSE_W}
-  - {t: Z, h: LEFT SHIFT}
-  - X
-  - C
-  - V
-  - B
-  - ':'
-  - ;
-  - N
-  - M
-  - ','
-  - .
-  - {t: /, h: BLE_M}
-  - LEFT GUI
-  - LEFT WIN
-  - LEFT ALT
-  - {t: '`', h: NUM_M}
-  - {t: SPACE, h: MOUSE_M}
-  - {t: '-', h: SCRL_M}
-  - ENTER
-  - BACKSPACE
-  - RIGHT SHIFT
-  NUM_W:
-  - ESCAPE
+  num-sysmbol:
+  - '1'
+  - '2'
+  - '3'
+  - '4'
+  - '5'
   - '!'
   - '@'
   - '#'
   - $
-  - '='
-  - '7'
-  - '8'
-  - '9'
-  - '*'
-  - TAB
   - '%'
+  - {t: '6', h: LEFT ALT}
+  - {t: '7', h: LEFT CONTROL}
+  - {t: '8', h: LEFT SHIFT}
+  - {t: '9', h: LEFT GUI}
+  - '0'
+  - F10
+  - LEFT ARROW
+  - {t: DOWN ARROW, h: RIGHT GUI}
+  - {t: UP ARROW, h: RIGHT SHIFT}
+  - RIGHT ARROW
+  - {t: \, h: scrl}
+  - /
+  - '*'
+  - '-'
+  - +
+  - .
+  - '='
+  - DELETE
   - ^
   - '&'
   - '*'
-  - '%'
-  - '0'
-  - '4'
-  - '5'
-  - '6'
-  - '-'
-  - '|'
-  - (
-  - )
-  - '['
-  - ']'
+  - '`'
   - {t: ▽, type: trans}
-  - +
-  - .
-  - '1'
-  - '2'
-  - '3'
-  - /
-  - LCTRL
-  - LEFT GUI
-  - LEFT ALT
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - ENTER
-  - BACKSPACE
-  - RIGHT SHIFT
-  NUM_M:
-  - ESCAPE
+  - {t: ▽, type: trans}
+  - {t: CAPSLOCK, h: BLE}
+  mouse:
+  - {t: Brows, h: toggle}
   - '!'
   - '@'
   - '#'
   - $
-  - '='
-  - '7'
-  - '8'
-  - '9'
-  - '*'
-  - TAB
-  - '%'
-  - ^
-  - '&'
-  - '*'
-  - '%'
-  - '0'
-  - '4'
-  - '5'
-  - '6'
-  - '-'
-  - '|'
-  - (
-  - )
-  - '['
-  - ']'
+  - ''
+  - '&mkp MB4'
+  - Gui+R
+  - '&mkp MB5'
+  - Sft+Gui+H
+  - {t: LEFT ALT, h: sticky}
+  - LEFT CONTROL
+  - LEFT SHIFT
+  - LEFT GUI
   - {t: ▽, type: trans}
-  - +
-  - .
-  - '1'
-  - '2'
-  - '3'
-  - /
-  - LEFT GUI
-  - LEFT GUI
-  - LEFT ALT
+  - CAPSLOCK
+  - ''
+  - '&mkp MB1'
+  - '&mkp MB3'
+  - '&mkp MB2'
+  - scrl
+  - {t: ▽, type: trans}
+  - Sft+Gui+S
+  - Ctl+Sft+Gui+S
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - DELETE
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - ENTER
-  - BACKSPACE
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - RIGHT SHIFT
-  MOUSE_W:
-  - ESCAPE
-  - Ctl+Z
-  - UP ARROW
+  scrl:
+  - F1
+  - F2
+  - F3
+  - F4
+  - F5
+  - ''
+  - '&mkp MB4'
+  - ''
+  - '&mkp MB5'
+  - '*'
+  - LEFT ALT
+  - LEFT CONTROL
+  - LEFT SHIFT
+  - LEFT GUI
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - ''
+  - '&mkp MB1'
+  - '&mkp MB3'
+  - '&mkp MB2'
+  - {type: held}
+  - F6
+  - F7
+  - F8
+  - F9
+  - F10
+  - F12
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - LANG2
+  - LANG1
+  - RIGHT SHIFT
+  Brows:
+  - {t: default, h: toggle}
+  - Sft+Gui+H
+  - Gui+R
   - Ctl+Y
   - Ctl+V
   - ^
@@ -193,7 +193,7 @@ layers:
   - '&mkp MB1'
   - SCRL_W
   - '&mkp MB2'
-  - {t: '&henkan', type: held}
+  - '&henkan'
   - {t: KP 0, h: LEFT SHIFT}
   - Ctl+Y
   - DOWN ARROW
@@ -215,48 +215,48 @@ layers:
   - ENTER
   - BACKSPACE
   - '|'
-  MOUSE_M:
-  - ESCAPE
-  - Gui+Z
-  - UP ARROW
-  - Gui+Sft+Z
-  - Gui+V
+  MOUSE&SYMBOL:
+  - '!'
+  - '@'
+  - '#'
+  - $
+  - '%'
+  - '&mkp MB4'
+  - '&mkp MB1'
+  - '&mkp MB3'
+  - '&mkp MB2'
+  - '&mkp MB5'
   - ^
   - '&'
-  - '&mkp MB3'
-  - (
-  - )
-  - TAB
+  - '*'
+  - '`'
+  - \
+  - Sft+Gui+=
   - LEFT ARROW
-  - Gui+Ctl+Sft+4
-  - RIGHT ARROW
-  - Gui+A
-  - _
-  - '!'
-  - '&mkp MB1'
-  - SCRL_M
-  - '&mkp MB2'
-  - Ctl+SPACE
-  - {t: KP 0, h: LEFT SHIFT}
-  - Gui+Ctl+Z
   - DOWN ARROW
-  - Gui+RIGHT
-  - Gui+LEFT
-  - '='
+  - UP ARROW
+  - RIGHT ARROW
+  - \
+  - LEFT SHIFT
+  - Sft+Gui+S
+  - Ctl+Sft+Gui+S
+  - LEFT ARROW
+  - RIGHT ARROW
   - {t: ▽, type: trans}
+  - Gui+-
   - '['
   - ']'
   - '{'
   - '}'
-  - Ctl+SPACE
-  - LCTRL
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {type: held}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - ENTER
-  - BACKSPACE
+  - DELETE
   - '|'
   SCRL_W:
   - ESCAPE
@@ -277,7 +277,7 @@ layers:
   - OUT TOG
   - {t: ▽, type: trans}
   - '&mkp MB1'
-  - {t: ▽, type: trans}
+  - {type: held}
   - '&mkp MB2'
   - {t: ▽, type: trans}
   - LEFT SHIFT
@@ -297,40 +297,38 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  SCRL_M:
-  - ESCAPE
-  - Ctl+Sft+TAB
-  - UP ARROW
-  - Ctl+TAB
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  SCRL_FNC:
+  - '&mg_set_1'
+  - F1
+  - F2
+  - F3
+  - F4
+  - '&mkp MB4'
+  - '&mkp MB1'
   - '&mkp MB3'
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - HOME
-  - LEFT ARROW
-  - DOWN ARROW
-  - RIGHT ARROW
-  - END
+  - '&mkp MB2'
+  - '&mkp MB5'
+  - '&mg_set_2'
+  - F5
+  - F6
+  - F7
+  - F8
   - OUT TOG
   - {t: ▽, type: trans}
-  - '&mkp MB1'
-  - {t: ▽, type: trans}
-  - '&mkp MB2'
-  - {t: ▽, type: trans}
-  - LEFT SHIFT
-  - Gui+Sft+LEFT ARROW
-  - {t: ▽, type: trans}
-  - Gui+Sft+RIGHT ARROW
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - VOLUME DOWN
+  - F9
+  - F10
+  - F11
+  - F12
+  - VOLUME UP
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -340,9 +338,11 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - LANG2
+  - LANG1
   - {t: ▽, type: trans}
   FN_W:
   - {t: ▽, type: trans}
@@ -463,7 +463,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: BT CLR, type: held}
+  - BT CLR
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -473,7 +473,7 @@ layers:
   - {t: ▽, type: trans}
   - '&bootloader'
   - BT CLR ALL
-  BLE_M:
+  BLE:
   - F1
   - F2
   - F3
@@ -514,5 +514,5 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - '&bootloader'
+  - {t: ▽, type: trans}
   - BT CLR ALL
