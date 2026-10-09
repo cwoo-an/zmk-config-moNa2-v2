@@ -33,7 +33,7 @@ layers:
   - M
   - ','
   - .
-  - {t: /, h: '&lt11_gesture'}
+  - {t: /, h: '&mg_set_0'}
   - '&mg_set_0'
   - '&mg_set_1'
   - '&mg_set_2'
