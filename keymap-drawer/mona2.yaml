@@ -33,7 +33,7 @@ layers:
   - M
   - ','
   - .
-  - {t: /, h: BLE}
+  - {t: /, h: '&lt11_gesture'}
   - '&mg_set_0'
   - '&mg_set_1'
   - '&mg_set_2'
@@ -506,13 +506,13 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: BT CLR, type: held}
+  - BT CLR
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - BT CLR ALL
+  - {t: BT CLR ALL, type: held}
