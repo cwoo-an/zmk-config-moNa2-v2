@@ -132,6 +132,19 @@
        DYA Studio から編集したいマクロは Web UI で新規作成し、
        キーに `&rmacro <slot>` を割り当てて使う。 */
     macros {
+        // 押している間：レイヤー11を有効にして、ジェスチャー0を有効にする
+        lt11_gesture: lt11_gesture {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <0>;
+            tap-ms = <0>;
+            bindings
+                = <&macro_press &mo 11 &mg_set_0>
+                , <&macro_pause_for_release>
+                , <&macro_release &mg_set_0 &mo 11>
+                ;
+        };
+
         to_layer_0: to_layer_0 {
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
@@ -228,6 +241,49 @@
             ccw-binding = <&msc SCRL_UP>;
         };
 
+        // ── 「/」キー：タップで/、長押しでレイヤー11＋ジェスチャー0 ──
+        // 右手だけでジェスチャーを使うため（小指で/を押さえて親指でボール）
+        ht_slash_gesture: ht_slash_gesture {
+            compatible = "zmk,behavior-hold-tap";
+            display-name = "/ + Gesture 0 (Layer 11)";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <200>;
+            require-prior-idle-ms = <150>;
+            bindings = <&lt11_gesture>, <&kp>;
+        };
+
+        // ── Ctrlだけの長押し修飾（反対の手のキーと組み合わせたときだけCtrlになる）──
+        // キー番号: 左手 0-4 / 10-14 / 21-26 / 33-38、右手 5-9 / 15-20 / 27-32 / 39-41
+        // S用：右手のキーを押したときだけCtrl。「sa」やS+親指Spaceでは誤爆しない
+        hrm_ctrl_l: hrm_ctrl_l {
+            compatible = "zmk,behavior-hold-tap";
+            display-name = "HRM Ctrl (Left/S)";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <0>;
+            require-prior-idle-ms = <150>;
+            hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 20 27 28 29 30 31 32 39 40 41>;
+            hold-trigger-on-release;
+            bindings = <&kp>, <&kp>;
+        };
+
+        // L用：左手のキー（左親指を含む）を押したときだけCtrl
+        hrm_ctrl_r: hrm_ctrl_r {
+            compatible = "zmk,behavior-hold-tap";
+            display-name = "HRM Ctrl (Right/L)";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <0>;
+            require-prior-idle-ms = <150>;
+            hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 21 22 23 24 25 26 33 34 35 36 37 38>;
+            hold-trigger-on-release;
+            bindings = <&kp>, <&kp>;
+        };
+
         // レイヤー1・7用：左右スクロール (DYA Studioで設定していた内容)
         rsr_hscroll: rsr_hscroll {
             compatible = "zmk,behavior-runtime-sensor-rotate";
@@ -278,8 +334,8 @@
             display-name = "default";
             bindings = <
 &kp Q  &kp W  &kp E  &kp R  &kp T  &kp Y  &kp U  &kp I  &kp O  &kp P
-&mt LEFT_ALT A  &mt LEFT_CONTROL S  &mt LEFT_SHIFT D  &mt LEFT_GUI F  &kp G  &kp F10  &kp H  &mt RIGHT_GUI J  &mt RIGHT_SHIFT K  &mt RIGHT_CONTROL L  &lt 3 MINUS
-&kp Z  &kp X  &kp C  &kp V  &kp B  &kp SINGLE_QUOTE  &kp SEMICOLON  &kp N  &kp M  &kp COMMA  &kp DOT  &lt 11 SLASH
+&mt LEFT_ALT A  &hrm_ctrl_l LEFT_CONTROL S  &mt LEFT_SHIFT D  &mt LEFT_GUI F  &kp G  &kp F10  &kp H  &mt RIGHT_GUI J  &mt RIGHT_SHIFT K  &hrm_ctrl_r RIGHT_CONTROL L  &lt 3 MINUS
+&kp Z  &kp X  &kp C  &kp V  &kp B  &kp SINGLE_QUOTE  &kp SEMICOLON  &kp N  &kp M  &kp COMMA  &kp DOT  &ht_slash_gesture 0 SLASH
 &mg_set_0  &mg_set_1  &mg_set_2  &lt 2 ESCAPE  &lt 1 SPACE  &lt 3 TAB  &kp ENTER  &kp BACKSPACE  &kp RIGHT_SHIFT
             >;
 
